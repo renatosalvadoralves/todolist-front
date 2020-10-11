@@ -13,6 +13,7 @@ import {
   SET_LOADING,
 } from 'src/redux/user/user-types';
 import { RootState } from 'src/redux/root-reducer';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
@@ -52,11 +53,13 @@ const Login: React.FC = () => {
             label="Password"
             name="password"
             type="password"
-            error={errors.email?.message}
+            error={errors.password?.message}
           />
           <StyledButton />
         </form>
         {user.error && <Error msg="Sorry, can't login" />}
+        <br />
+        <Link to="/register">Already have account? Click here</Link>
       </Container>
     </Layout>
   );

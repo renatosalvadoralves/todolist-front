@@ -10,6 +10,7 @@ import { connect, useSelector } from 'react-redux';
 import { RootState } from './redux/root-reducer';
 import Navbar from 'src/components/navbar';
 import Login from 'src/pages/login';
+import Register from 'src/pages/register';
 
 // import PrivateRoute from './auth/PrivateRoute';
 
@@ -28,6 +29,7 @@ const Routes = () => {
             currentUser && !loading ? <Redirect to="/" /> : <Login />
           }
         />
+        <Route path="/register" component={Register} />
         {/* <PrivateRoute path="/user/dashboard" exact component={UserDashboard} /> */}
       </Switch>
     </BrowserRouter>

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { error } from 'src/utils/styles/colors';
+import { error, success } from 'src/utils/styles/colors';
 
-export const MsgDiv = styled.div`
-  color: ${error};
+interface Props {
+  readonly isError: boolean;
+}
+
+export const MsgDiv = styled.div<Props>`
+  color: ${({ isError }) => (isError ? error : success)};
 `;
