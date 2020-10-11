@@ -1,9 +1,9 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, Middleware } from 'redux'
 import { persistStore } from 'redux-persist'
 
 import rootReducer from './root-reducer'
 
-const bindMiddleware = middleware => {
+const bindMiddleware = (middleware: Array<Middleware>) => {
   if (process.env.NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension')
     return composeWithDevTools(applyMiddleware(...middleware))
