@@ -17,6 +17,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
         scroll-behavior: smooth;
         color: ${colors.primary};
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     body {

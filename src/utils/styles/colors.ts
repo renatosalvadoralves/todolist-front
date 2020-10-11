@@ -1,3 +1,7 @@
-export const primary = "rgba(0, 0, 0, 0.4)";
-export const secondary = "rgba(255, 255, 255, 0.1)";;
+//Text
+export const primary = "#000";
+export const secondary = "#9d9d9d";
 
+//Background
+export const midGray = "rgb(206,206,206)";
+export const lightGray = "rgb(226,226,226,0.7)";

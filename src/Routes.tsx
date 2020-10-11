@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { connect, useSelector } from 'react-redux';
 import { RootState } from './redux/root-reducer';
-
+import Navbar from 'src/components/navbar';
 import Login from 'src/pages/login';
 
 // import PrivateRoute from './auth/PrivateRoute';
@@ -17,6 +17,7 @@ const Routes = () => {
   const currentUser = useSelector((state: RootState) => state.user.name);
   return (
     <BrowserRouter>
+      <Navbar />
       <Switch>
         <Route
           path="/login"
