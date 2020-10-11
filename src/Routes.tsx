@@ -15,6 +15,8 @@ import Login from 'src/pages/login';
 
 const Routes = () => {
   const currentUser = useSelector((state: RootState) => state.user.name);
+  const loading = useSelector((state: RootState) => state.user.loading);
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -22,7 +24,9 @@ const Routes = () => {
         <Route
           path="/login"
           exact
-          render={() => (currentUser ? <Redirect to="/" /> : <Login />)}
+          render={() =>
+            currentUser && !loading ? <Redirect to="/" /> : <Login />
+          }
         />
         {/* <PrivateRoute path="/user/dashboard" exact component={UserDashboard} /> */}
       </Switch>
