@@ -4,7 +4,7 @@ export const SET_LOADING = 'SET_LOADING';
 
 interface setCurrentUserSuccess {
   type: typeof SET_CURRENT_USER_SUCCESS;
-  payload: NameType;
+  payload: DataType;
 }
 
 interface setCurrentUserFailure {
@@ -17,7 +17,7 @@ interface setLoading {
 }
 
 export interface userState {
-  name: string | null;
+  data: DataType | null;
   error: boolean;
   loading: boolean;
 }
@@ -27,5 +27,9 @@ export type UserActionTypes =
   | setCurrentUserFailure
   | setLoading;
 
-export type NameType = string;
+export interface DataType {
+  _id: string;
+  name: string;
+  token: string;
+}
 export type LoadingType = boolean;

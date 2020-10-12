@@ -75,7 +75,7 @@ const Register: React.FC = () => {
           />
         )}
         <br />
-        <Link to="/login">Already have account? Click here</Link>
+        <Link to="/login">Already have account?</Link>
       </Container>
     </Layout>
   );

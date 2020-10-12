@@ -7,7 +7,7 @@ import {
 } from './user-types';
 
 const INITIAL_STATE: userState = {
-  name: null,
+  data: null,
   error: false,
   loading: false,
 };
@@ -17,13 +17,13 @@ const userReducer = (state = INITIAL_STATE, action: UserActionTypes) => {
     case SET_CURRENT_USER_SUCCESS:
       return {
         ...state,
-        name: action.payload,
+        data: action.payload,
         error: false,
       };
     case SET_CURRENT_USER_FAILURE:
       return {
         ...state,
-        name: null,
+        data: null,
         error: true,
       };
     case SET_LOADING:

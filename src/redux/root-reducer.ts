@@ -4,8 +4,10 @@ import storage from 'redux-persist/lib/storage';
 import createFilter from 'redux-persist-transform-filter';
 
 import userReducer from './user/user-reducer';
+import projectReducer from './project/project-reducer';
+import taskReducer from './task/task-reducer';
 
-const saveSubsetFilter = createFilter('user', ['name']);
+const saveSubsetFilter = createFilter('user', ['data']);
 
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
@@ -14,7 +16,11 @@ const persistConfig: PersistConfig<RootState> = {
   transforms: [saveSubsetFilter],
 };
 
-const rootReducer = combineReducers({ user: userReducer });
+const rootReducer = combineReducers({
+  user: userReducer,
+  project: projectReducer,
+  task: taskReducer,
+});
 
 export default persistReducer<RootState>(persistConfig, rootReducer);
 

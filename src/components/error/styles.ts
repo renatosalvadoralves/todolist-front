@@ -6,5 +6,6 @@ interface Props {
 }
 
 export const MsgDiv = styled.div<Props>`
+  font-size: 14px;
   color: ${({ isError }) => (isError ? error : success)};
 `;

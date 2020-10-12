@@ -4,12 +4,12 @@ import { RootState } from 'src/redux/root-reducer';
 import { Container } from './styles';
 
 const Navbar: React.FC = () => {
-  const user = useSelector((state: RootState) => state.user.name);
+  const user = useSelector((state: RootState) => state.user.data);
 
   return (
     <Container>
       <div>EDirectInsure TODO List</div>
-      {user && <div>dsdsdsfdsg</div>}
+      {user && <div>{user?.name}</div>}
     </Container>
   );
 };

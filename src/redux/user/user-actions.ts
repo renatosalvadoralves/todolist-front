@@ -2,14 +2,14 @@ import {
   SET_CURRENT_USER_SUCCESS,
   SET_CURRENT_USER_FAILURE,
   SET_LOADING,
-  NameType,
+  DataType,
   UserActionTypes,
   LoadingType,
 } from './user-types';
 
-export const setCurrentUserSuccess = (name: NameType): UserActionTypes => ({
+export const setCurrentUserSuccess = (data: DataType): UserActionTypes => ({
   type: SET_CURRENT_USER_SUCCESS,
-  payload: name,
+  payload: data,
 });
 
 export const setCurrentUserFailure = (): UserActionTypes => ({

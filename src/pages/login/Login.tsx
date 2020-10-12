@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user);
+  const { loading, error } = useSelector((state: RootState) => state.user);
   const { register, handleSubmit, errors } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
   });
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     dispatch({ type: SET_LOADING, payload: false });
   };
 
-  if (user.loading) {
+  if (loading) {
     return <Loading />;
   }
 
@@ -57,9 +57,9 @@ const Login: React.FC = () => {
           />
           <StyledButton />
         </form>
-        {user.error && <Error msg="Sorry, can't login" />}
+        {error && <Error msg="Sorry, can't login" />}
         <br />
-        <Link to="/register">Already have account? Click here</Link>
+        <Link to="/register">You dont have account?</Link>
       </Container>
     </Layout>
   );
